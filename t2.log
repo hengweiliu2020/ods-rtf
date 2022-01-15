@@ -1,0 +1,1166 @@
+1                               The SAS System   18:26 Friday, January 14, 2022
+
+NOTE: Copyright (c) 2016 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M7) 
+      Licensed to HENGRUI USA, Site 70285548.
+NOTE: This session is executing on the X64_10PRO  platform.
+
+
+
+NOTE: Analytical products:
+      
+      SAS/STAT 15.2
+
+NOTE: Additional host information:
+
+ X64_10PRO WIN 10.0.19041  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.11 seconds
+      cpu time            0.12 seconds
+      
+
+NOTE: AUTOEXEC processing beginning; file is C:\yang\autoexec.sas.
+
+NOTE: Libref ADAM was successfully assigned as follows: 
+2                               The SAS System   18:26 Friday, January 14, 2022
+
+      Engine:        V9 
+      Physical Name: C:\yang
+
+NOTE: There were 3 observations read from the data set SASHELP.VEXTFL.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: The data set WORK.TEMP has 1 observations and 5 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+3                               The SAS System   18:26 Friday, January 14, 2022
+
+NOTE: There were 1 observations read from the data set WORK.TEMP.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: AUTOEXEC processing completed.
+
+1          
+2          data adsl; set adam.adsl;
+3          if trt01p='Placebo' then trt='trt1';
+4          else if trt01p='Active_low' then trt='trt2';
+5          else if trt01p='Active_high' then trt='trt3';
+6          run;
+
+NOTE: There were 16 observations read from the data set ADAM.ADSL.
+NOTE: The data set WORK.ADSL has 16 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+4                               The SAS System   18:26 Friday, January 14, 2022
+
+7          
+8          %bign(classvar=trt);
+
+NOTE: There were 16 observations read from the data set WORK.ADSL.
+NOTE: The data set WORK._ADSL has 16 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+9          %category_stat(byvarn=, byvar=, tagn=1, tag=Any Metastatic Disease,
+9        ! category=Y#N, catlabel=Yes#No, indata=adsl, invar=metafl,
+10                       classvar=trt, outdata=p1, percent=Y, where=, missing=,
+5                               The SAS System   18:26 Friday, January 14, 2022
+
+10       !  indent=Y, indent2=N, countby=distinct usubjid);
+
+NOTE: There were 16 observations read from the data set WORK.ADSL.
+NOTE: The data set WORK._ADSL has 16 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 16 observations read from the data set WORK._ADSL.
+NOTE: The data set WORK._ADSL has 16 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK.GET_CAT has 2 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+6                               The SAS System   18:26 Friday, January 14, 2022
+
+
+NOTE: Table WORK.OUT1 created, with 6 rows and 3 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 6 observations read from the data set WORK.OUT1.
+NOTE: The data set WORK.OUT1 has 6 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 6 observations read from the data set WORK.OUT1.
+NOTE: The data set WORK.OUT_METAFL has 2 observations and 5 variables.
+NOTE: PROCEDURE TRANSPOSE used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+7                               The SAS System   18:26 Friday, January 14, 2022
+
+
+
+NOTE: The data set WORK.M1 has 5 observations and 41 variables.
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 5 observations read from the data set WORK.M1.
+NOTE: The data set WORK.M1 has 1 observations and 42 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK.M2 has 9 observations and 41 variables.
+8                               The SAS System   18:26 Friday, January 14, 2022
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 9 observations read from the data set WORK.M2.
+NOTE: The data set WORK.M2 has 1 observations and 42 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 2 observations read from the data set WORK.OUT_METAFL.
+NOTE: The data set WORK.OUT_METAFL has 2 observations and 5 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+9                               The SAS System   18:26 Friday, January 14, 2022
+
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 2 observations read from the data set WORK.GET_CAT.
+NOTE: The data set WORK.GET_CAT has 2 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Var trt1 exists in out_metafl
+
+NOTE: There were 2 observations read from the data set WORK.GET_CAT.
+NOTE: The data set WORK.GET_CAT has 2 observations and 9 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Var trt2 exists in out_metafl
+NOTE: Var trt3 exists in out_metafl
+
+10                              The SAS System   18:26 Friday, January 14, 2022
+
+NOTE: There were 2 observations read from the data set WORK.OUT_METAFL.
+NOTE: There were 2 observations read from the data set WORK.GET_CAT.
+NOTE: The data set WORK.P1 has 2 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 2 observations read from the data set WORK.P1.
+NOTE: The data set WORK.P1 has 2 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 2 observations read from the data set WORK.P1.
+NOTE: The data set WORK.P1 has 2 observations and 9 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+11                              The SAS System   18:26 Friday, January 14, 2022
+
+
+11         
+12         %onelevel(tagn=2, tag=Location of Metastatic Disease, indata=adsl,
+12       ! outdata=p2, classvar=trt, level1=metaloc, percent=Y,
+WARNING: Apparent symbolic reference WHERE not resolved.
+13                    where=%str(metaloc>' '), indent=Y, indent2=N,
+13       ! wheref=&where);
+
+NOTE: There were 12 observations read from the data set WORK.ADSL.
+      WHERE metaloc>' ';
+NOTE: The data set WORK._ADSL has 12 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: Table WORK.LEV1 created, with 8 rows and 3 columns.
+
+12                              The SAS System   18:26 Friday, January 14, 2022
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 8 observations read from the data set WORK.LEV1.
+NOTE: The data set WORK.TLEV1 has 3 observations and 5 variables.
+NOTE: PROCEDURE TRANSPOSE used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 3 observations read from the data set WORK.TLEV1.
+NOTE: The data set WORK.TLEV1 has 3 observations and 8 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 3 observations read from the data set WORK.TLEV1.
+13                              The SAS System   18:26 Friday, January 14, 2022
+
+NOTE: The data set WORK.TLEV1 has 3 observations and 8 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Var trt1 exists in tlev1
+NOTE: Var trt2 exists in tlev1
+NOTE: Var trt3 exists in tlev1
+
+NOTE: There were 3 observations read from the data set WORK.TLEV1.
+NOTE: The data set WORK.P2 has 3 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 3 observations read from the data set WORK.P2.
+NOTE: The data set WORK.P2 has 3 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+14                              The SAS System   18:26 Friday, January 14, 2022
+
+      
+
+NOTE: Table WORK.FRAME created, with 3 rows and 1 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK.M1 has 11 observations and 41 variables.
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 11 observations read from the data set WORK.M1.
+NOTE: The data set WORK.M1 has 1 observations and 42 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+15                              The SAS System   18:26 Friday, January 14, 2022
+
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK.M2 has 1 observations and 41 variables.
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK.M2.
+NOTE: The data set WORK.M2 has 1 observations and 42 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+16                              The SAS System   18:26 Friday, January 14, 2022
+
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 3 observations read from the data set WORK.P2.
+NOTE: The data set WORK.P2 has 3 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 3 observations read from the data set WORK.FRAME.
+NOTE: The data set WORK.FRAME has 3 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 3 observations read from the data set WORK.P2.
+NOTE: There were 3 observations read from the data set WORK.FRAME.
+NOTE: The data set WORK.P2 has 3 observations and 14 variables.
+17                              The SAS System   18:26 Friday, January 14, 2022
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 3 observations read from the data set WORK.P2.
+NOTE: The data set WORK.P2 has 3 observations and 14 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+WARNING: Apparent symbolic reference WHERE not resolved.
+14         
+15         %onelevel(tagn=2, tag=Location of Metastatic Disease, indata=adsl,
+15       ! outdata=p3, classvar=trt, level1=specify, percent=Y,
+16                    where=%str(specify>' '), indent=Y, indent2=Y,
+16       ! wheref=&where);
+
+NOTE: There were 2 observations read from the data set WORK.ADSL.
+      WHERE specify>' ';
+NOTE: The data set WORK._ADSL has 2 observations and 6 variables.
+18                              The SAS System   18:26 Friday, January 14, 2022
+
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK.LEV1 created, with 2 rows and 3 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 2 observations read from the data set WORK.LEV1.
+NOTE: The data set WORK.TLEV1 has 1 observations and 4 variables.
+NOTE: PROCEDURE TRANSPOSE used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+19                              The SAS System   18:26 Friday, January 14, 2022
+
+      
+
+
+NOTE: There were 1 observations read from the data set WORK.TLEV1.
+NOTE: The data set WORK.TLEV1 has 1 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK.TLEV1.
+NOTE: The data set WORK.TLEV1 has 1 observations and 7 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Var trt1 exists in tlev1
+NOTE: Var trt2 not exists in tlev1
+NOTE: Var trt3 exists in tlev1
+
+NOTE: There were 1 observations read from the data set WORK.TLEV1.
+20                              The SAS System   18:26 Friday, January 14, 2022
+
+NOTE: The data set WORK.TLEV1 has 1 observations and 8 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK.TLEV1.
+NOTE: The data set WORK.P3 has 1 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK.P3.
+NOTE: The data set WORK.P3 has 1 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK.FRAME created, with 1 rows and 1 columns.
+21                              The SAS System   18:26 Friday, January 14, 2022
+
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: The data set WORK.M1 has 11 observations and 41 variables.
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 11 observations read from the data set WORK.M1.
+NOTE: The data set WORK.M1 has 1 observations and 42 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+22                              The SAS System   18:26 Friday, January 14, 2022
+
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK.M2 has 1 observations and 41 variables.
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK.M2.
+NOTE: The data set WORK.M2 has 1 observations and 42 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+23                              The SAS System   18:26 Friday, January 14, 2022
+
+
+NOTE: There were 1 observations read from the data set WORK.P3.
+NOTE: The data set WORK.P3 has 1 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK.FRAME.
+NOTE: The data set WORK.FRAME has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK.P3.
+NOTE: There were 1 observations read from the data set WORK.FRAME.
+NOTE: The data set WORK.P3 has 1 observations and 14 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+24                              The SAS System   18:26 Friday, January 14, 2022
+
+      
+
+
+NOTE: There were 1 observations read from the data set WORK.P3.
+NOTE: The data set WORK.P3 has 1 observations and 14 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+17         
+18         
+19         data final; set p1 p2 p3;
+20         
+21         %let trt0=;
+22         %let trt1=Placebo^(N=&bign1);
+23         %let trt2=Low Dose^(N=&bign2);
+24         %let trt3=High Dose^(N=&bign3);
+25         
+26         %title_foot_rtf(txtfile=&txtfile, tabno=14.5.1);
+MPRINT(TITLE_FOOT_RTF):   symbolgen orientation=landscape;
+MPRINT(TITLE_FOOT_RTF):   ods escapechar='~';
+NOTE: There were 2 observations read from the data set WORK.P1.
+NOTE: There were 3 observations read from the data set WORK.P2.
+NOTE: There were 1 observations read from the data set WORK.P3.
+NOTE: The data set WORK.FINAL has 6 observations and 16 
+      variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+      
+
+The SAS System
+
+MPRINT(TITLE_FOOT_RTF):   data _null_;
+MPRINT(TITLE_FOOT_RTF):   set sashelp.vextfl;
+MPRINT(TITLE_FOOT_RTF):   if (substr(fileref,1,3)='_LN' or 
+substr (fileref,1,3)='#LN' or substr(fileref,1,3)='SYS') and 
+index(upcase(xpath),'.SAS')>0 then do;
+MPRINT(TITLE_FOOT_RTF):   call 
+symput("pgmname",trim(scan(xpath,-1,'\')));
+MPRINT(TITLE_FOOT_RTF):   call 
+symput('pgm',scan(trim(scan(xpath,-1,'\')),1, '.'));
+MPRINT(TITLE_FOOT_RTF):   stop;
+MPRINT(TITLE_FOOT_RTF):   end;
+
+NOTE: There were 3 observations read from the data set 
+      SASHELP.VEXTFL.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(TITLE_FOOT_RTF):   data spec;
+MPRINT(TITLE_FOOT_RTF):   company="Hengrui USA";
+SYMBOLGEN:  Macro variable PGMNAME resolves to t2.sas
+MPRINT(TITLE_FOOT_RTF):   pgmname="Program Name: t2.sas";
+SYMBOLGEN:  Macro variable PROTOCOL resolves to compound_YYYYY
+MPRINT(TITLE_FOOT_RTF):   protocol="Protocol: compound_YYYYY";
+SYMBOLGEN:  Macro variable SYSDATE resolves to 14JAN22
+MPRINT(TITLE_FOOT_RTF):   sdatec="14JAN22";
+MPRINT(TITLE_FOOT_RTF):   sdate=input(sdatec, date9.);
+MPRINT(TITLE_FOOT_RTF):   datec=put(sdate, yymmdd10.);
+SYMBOLGEN:  Macro variable SYSTIME resolves to 18:26
+MPRINT(TITLE_FOOT_RTF):   rundtm="Run datetime: <"||datec||" 
+18:26>";
+The SAS System
+
+MPRINT(TITLE_FOOT_RTF):   call symput('rundtm', 
+trim(left(rundtm)));
+MPRINT(TITLE_FOOT_RTF):   call symput('company', 
+trim(left(company)));
+MPRINT(TITLE_FOOT_RTF):   call symput('pgmname', 
+trim(left(pgmname)));
+MPRINT(TITLE_FOOT_RTF):   run;
+
+NOTE: The data set WORK.SPEC has 1 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(TITLE_FOOT_RTF):   data titlef;
+SYMBOLGEN:  Macro variable TXTFILE resolves to C:\yang\title.txt
+MPRINT(TITLE_FOOT_RTF):   infile "C:\yang\title.txt" print 
+lrecl=50000 pad missover end=eof;
+MPRINT(TITLE_FOOT_RTF):   input text $ 1-175;
+MPRINT(TITLE_FOOT_RTF):   
+y=index(upcase(substr(text,1,5)),'TABLE') + 
+index(upcase(substr(text,1,7)),'LISTING') + 
+index(upcase(substr(text,1,6)),'FIGURE');
+MPRINT(TITLE_FOOT_RTF):   if substr(upcase(text),1,4)='NOTE' 
+then foot=2;
+MPRINT(TITLE_FOOT_RTF):   if y>0 then 
+num=compress(scan(text,2,' '),':');
+
+NOTE: The infile "C:\yang\title.txt" is:
+      Filename=C:\yang\title.txt,
+      RECFM=P,LRECL=50000,File Size (bytes)=91,
+      Last Modified=14Jan2022:12:50:08,
+The SAS System
+
+      Create Time=14Jan2022:18:04:18
+
+NOTE: 4 records were read from the infile "C:\yang\title.txt".
+      The minimum record length was 0.
+      The maximum record length was 42.
+NOTE: The data set WORK.TITLEF has 4 observations and 4 
+      variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(TITLE_FOOT_RTF):   data titlef;
+MPRINT(TITLE_FOOT_RTF):   set titlef;
+MPRINT(TITLE_FOOT_RTF):   retain temp1 ;
+MPRINT(TITLE_FOOT_RTF):   if num>' ' then temp1= num;
+MPRINT(TITLE_FOOT_RTF):   else num=temp1;
+MPRINT(TITLE_FOOT_RTF):   if text=' ' then delete;
+
+NOTE: There were 4 observations read from the data set 
+      WORK.TITLEF.
+NOTE: The data set WORK.TITLEF has 2 observations and 5 
+      variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(TITLE_FOOT_RTF):   proc sort data=titlef;
+MPRINT(TITLE_FOOT_RTF):   by num;
+NOTE: There were 2 observations read from the data set 
+      WORK.TITLEF.
+The SAS System
+
+NOTE: The data set WORK.TITLEF has 2 observations and 5 
+      variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(TITLE_FOOT_RTF):   data titlef;
+MPRINT(TITLE_FOOT_RTF):   set titlef;
+MPRINT(TITLE_FOOT_RTF):   by num;
+MPRINT(TITLE_FOOT_RTF):   retain temp2;
+MPRINT(TITLE_FOOT_RTF):   if first.num then temp2=.;
+MPRINT(TITLE_FOOT_RTF):   if foot>0 then temp2=foot;
+MPRINT(TITLE_FOOT_RTF):   else foot=temp2;
+MPRINT(TITLE_FOOT_RTF):   if foot<.z then foot=1;
+
+NOTE: There were 2 observations read from the data set 
+      WORK.TITLEF.
+NOTE: The data set WORK.TITLEF has 2 observations and 6 
+      variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(TITLE_FOOT_RTF):   data titlef;
+MPRINT(TITLE_FOOT_RTF):   set titlef;
+SYMBOLGEN:  Macro variable TABNO resolves to 14.5.1
+MPRINT(TITLE_FOOT_RTF):   where num="14.5.1";
+MPRINT(TITLE_FOOT_RTF):   run;
+
+NOTE: There were 2 observations read from the data set 
+The SAS System
+
+      WORK.TITLEF.
+      WHERE num='14.5.1';
+NOTE: The data set WORK.TITLEF has 2 observations and 6 
+      variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(TITLE_FOOT_RTF):   data _null_;
+MPRINT(TITLE_FOOT_RTF):   set titlef end=eof;
+MPRINT(TITLE_FOOT_RTF):   where foot=1;
+MPRINT(TITLE_FOOT_RTF):   i+1;
+MPRINT(TITLE_FOOT_RTF):   call 
+symput(compress("tle"||put(i,best.)), text);
+MPRINT(TITLE_FOOT_RTF):   if eof then call symput('numtle', 
+trim(left(put(_n_,best.))));
+MPRINT(TITLE_FOOT_RTF):   run;
+
+NOTE: There were 1 observations read from the data set 
+      WORK.TITLEF.
+      WHERE foot=1;
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+SYMBOLGEN:  Macro variable COMPANY resolves to Hengrui USA
+MPRINT(TITLE_FOOT_RTF):   title1 font='Arial' height=0.7 j=left 
+"Hengrui USA" j=right "Page ~{pageof}";
+SYMBOLGEN:  Macro variable PROTOCOL resolves to compound_YYYYY
+MPRINT(TITLE_FOOT_RTF):   title2 font='Arial' height=0.7 j=left 
+The SAS System
+
+"compound_YYYYY";
+SYMBOLGEN:  Macro variable NUMTLE resolves to 1
+MLOGIC(TITLE_FOOT_RTF):  %DO loop beginning; index variable K; 
+      start value is 1; stop value is 1; by value is 1.  
+SYMBOLGEN:  Macro variable K resolves to 1
+SYMBOLGEN:  && resolves to &.
+SYMBOLGEN:  Macro variable K resolves to 1
+SYMBOLGEN:  Macro variable TLE1 resolves to Table 14.5.1 
+            Summary of Metastatic Disease                       
+                                                                
+                                                                
+                  
+MPRINT(TITLE_FOOT_RTF):   title3 font='Arial' height=0.7 
+j=center "Table 14.5.1 Summary of Metastatic Disease            
+                                                                
+                                                         ";
+MLOGIC(TITLE_FOOT_RTF):  %DO loop index variable K is now 2; 
+      loop will not iterate again.
+MPRINT(TITLE_FOOT_RTF):   run;
+MPRINT(TITLE_FOOT_RTF):   proc sql noprint;
+MPRINT(TITLE_FOOT_RTF):   select count(*) into :footobs from 
+titlef where foot=2;
+SYMBOLGEN:  Macro variable FOOTOBS resolves to        1
+MLOGIC(TITLE_FOOT_RTF):  %IF condition &footobs=0 is FALSE
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(TITLE_FOOT_RTF):   data _null_;
+MPRINT(TITLE_FOOT_RTF):   set titlef end=eof;
+MPRINT(TITLE_FOOT_RTF):   where foot=2;
+The SAS System
+
+MPRINT(TITLE_FOOT_RTF):   i+1;
+MPRINT(TITLE_FOOT_RTF):   call 
+symput(compress("fot"||put(i,best.)), trim(left(text)));
+MPRINT(TITLE_FOOT_RTF):   if eof then call symput('numfot', 
+trim(left(put(_n_,best.))));
+MPRINT(TITLE_FOOT_RTF):   run;
+
+NOTE: There were 1 observations read from the data set 
+      WORK.TITLEF.
+      WHERE foot=2;
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(TITLE_FOOT_RTF):   footnote1 justify=l 
+"~R'\brdrt\brdrs\brdrw5'";
+SYMBOLGEN:  Macro variable NUMFOT resolves to 1
+MLOGIC(TITLE_FOOT_RTF):  %DO loop beginning; index variable I; 
+      start value is 1; stop value is 1; by value is 1.  
+SYMBOLGEN:  Macro variable I resolves to 1
+SYMBOLGEN:  && resolves to &.
+SYMBOLGEN:  Macro variable I resolves to 1
+SYMBOLGEN:  Macro variable FOT1 resolves to Note: This is based 
+            on the dataset ADSL.
+MPRINT(TITLE_FOOT_RTF):   footnote2 font='Arial' height=0.7 
+j=left "Note: This is based on the dataset ADSL.";
+MLOGIC(TITLE_FOOT_RTF):  %DO loop index variable I is now 2; 
+      loop will not iterate again.
+SYMBOLGEN:  Macro variable NUMFOT resolves to 1
+SYMBOLGEN:  Macro variable PGM resolves to t2
+SYMBOLGEN:  Macro variable FDATE resolves to 2022-01-14
+The SAS System
+
+MPRINT(TITLE_FOOT_RTF):   footnote3 justify=l "Program Source: 
+t2.sas" justify=right "Executed: (Draft) 2022-01-14";
+MLOGIC(TITLE_FOOT_RTF):  Ending execution.
+27         %report_rtf(indata=final, outdir=&outdir,
+27       ! trtwidth=1.5);
+MLOGIC:  Beginning compilation of REPORT_RTF using the autocall 
+      file C:\yang\report_rtf.sas.
+MLOGIC:  Ending compilation of REPORT_RTF.
+MLOGIC(REPORT_RTF):  Beginning execution.
+MLOGIC(REPORT_RTF):  This macro was compiled from the autocall 
+      file C:\yang\report_rtf.sas
+SYMBOLGEN:  Macro variable OUTDIR resolves to C:\yang
+MLOGIC(REPORT_RTF):  Parameter INDATA has value final
+MLOGIC(REPORT_RTF):  Parameter OUTDIR has value C:\yang
+MLOGIC(REPORT_RTF):  Parameter TRTWIDTH has value 1.5
+SYMBOLGEN:  Macro variable OUTDIR resolves to C:\yang
+MPRINT(REPORT_RTF):   libname outd "C:\yang";
+NOTE: Libref OUTD refers to the same physical library as ADAM.
+NOTE: Libref OUTD was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\yang
+MPRINT(REPORT_RTF):  ** this program creates customized 
+template for ODS RTF **;
+MLOGIC(REPORT_RTF):  Beginning compilation of CUSTOM using the 
+      autocall file C:\yang\custom.sas.
+MLOGIC(REPORT_RTF):  Ending compilation of CUSTOM.
+MLOGIC(CUSTOM):  Beginning execution.
+MLOGIC(CUSTOM):  This macro was compiled from the autocall file 
+      C:\yang\custom.sas
+MPRINT(CUSTOM):   ODS PATH work.custom(update) 
+sasuser.templat(read) sashelp.tmplmst(read);
+Current ODS PATH list is: 
+The SAS System
+
+
+1. WORK.CUSTOM(UPDATE) 
+2. SASUSER.TEMPLAT(READ) 
+3. SASHELP.TMPLMST(READ) 
+MPRINT(CUSTOM):   ods path show;
+MPRINT(CUSTOM):   proc template;
+MPRINT(CUSTOM):   define style Styles.Custom;
+MPRINT(CUSTOM):   parent = Styles.rtf;
+MPRINT(CUSTOM):   replace fonts / 'TitleFont2' = ("Courier 
+New", 8pt) 'TitleFont' = ("Courier New", 8pt) 'StrongFont' = 
+("Courier New", 8pt) 'EmphasisFont' = ("Courier New", 8pt, 
+Bold) 'FixedEmphasisFont' = ("Courier New", 8pt, Bold) 
+'FixedStrongFont' = ("Courier New", 8pt) 'FixedHeadingFont' = 
+("Courier New", 8pt) 'BatchFixedFont' = ("Courier New", 8pt) 
+'FixedFont' = ("Courier New", 8pt) 'headingEmphasisFont' = 
+("Courier New", 8pt) 'headingFont' = ("Courier New", 8pt) 
+'docFont' = ("Courier New", 8pt);
+MPRINT(CUSTOM):   style SystemTitle from TitlesAndFooters / 
+protectspecialchars=off asis=on font=Fonts('TitleFont');
+MPRINT(CUSTOM):   replace Output from Container / frame = VOID 
+rules = NONE background=_undef_ frameborder=OFF;
+MPRINT(CUSTOM):   replace color_list / 'bg' = cxFFFFFF 'fg' = 
+cx000000;
+MPRINT(CUSTOM):   replace colors / 'headerfgemph' = 
+color_list('fg') 'headerbgemph' = color_list('bg') 
+'headerfgstrong' = color_list('fg') 'headerbgstrong' = 
+color_list('bg') 'headerfg' = color_list('fg') 'headerbg' = 
+color_list('bg') 'datafgemph' = color_list('fg') 'databgemph' = 
+color_list('bg') 'datafgstrong' = color_list('fg') 
+'databgstrong' = color_list('bg') 'datafg' = color_list('fg') 
+'databg' = color_list('bg') 'batchfg' = color_list('fg') 
+'batchbg' = color_list('bg') 'tableborder' = color_list('fg') 
+The SAS System
+
+'tablebg' = color_list('bg') 'notefg' = color_list('fg') 
+'notebg' = color_list('bg') 'bylinefg' = color_list('fg') 
+'bylinebg' = color_list('bg') 'captionfg' = color_list('fg') 
+'captionbg' = color_list('bg') 'proctitlefg' = color_list('fg') 
+'proctitlebg' = color_list('bg') 'titlefg' = color_list('fg') 
+'titlebg' = color_list('bg') 'systitlefg' = color_list('fg') 
+'systitlebg' = color_list('bg') 'Conentryfg' = color_list('fg') 
+'Confolderfg' = color_list('fg') 'Contitlefg' = 
+color_list('fg') 'link2' = color_list('fg') 'link1' = 
+color_list('fg') 'contentfg' = color_list('fg') 'contentbg' = 
+color_list('bg') 'docfg' = color_list('fg') 'docbg' = 
+color_list('bg');
+MPRINT(CUSTOM):   replace Body from Document / bottommargin = 
+0.9in topmargin = 1.0in rightmargin = 1.0in leftmargin = 1.0in 
+pagebreakhtml = html('PageBreakLine');
+MPRINT(CUSTOM):   replace SystemFooter from TitlesAndFooters / 
+font = Fonts('TitleFont') just=left asis=on cellpadding=0 
+cellspacing=0;
+MPRINT(CUSTOM):   style table from output / background=_Undef_ 
+frame=above rules=groups borderwidth = 0.4pt cellpadding = 1 
+cellspacing = 0 ;
+MPRINT(CUSTOM):   style Header from header / background=_undef_ 
+frame=below rules=rows font = fonts('HeadingFont') foreground = 
+colors('headerfg') background = colors('headerbg');
+MPRINT(CUSTOM):   style Rowheader from Rowheader / rules=rows 
+background=_undef_ frame=below;
+MPRINT(CUSTOM):   end;
+NOTE: STYLE 'Styles.Custom' has been saved to: WORK.CUSTOM
+NOTE: PROCEDURE TEMPLATE used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+The SAS System
+
+
+MPRINT(CUSTOM):   run;
+MLOGIC(CUSTOM):  Ending execution.
+MPRINT(REPORT_RTF):  ;
+MPRINT(REPORT_RTF):   ** take care of the variable INDENT ** ;
+MLOGIC(VAREXIST):  Beginning execution.
+MLOGIC(VAREXIST):  This macro was compiled from the autocall 
+      file C:\yang\varexist.sas
+SYMBOLGEN:  Macro variable INDATA resolves to final
+MLOGIC(VAREXIST):  Parameter DS has value final
+MLOGIC(VAREXIST):  Parameter VAR has value indent
+MLOGIC(VAREXIST):  %GLOBAL  RESULT
+MLOGIC(VAREXIST):  %LOCAL  RC DSID 
+MLOGIC(VAREXIST):  %LET (variable name is DSID)
+SYMBOLGEN:  Macro variable DS resolves to final
+SYMBOLGEN:  Macro variable DSID resolves to 1
+SYMBOLGEN:  Macro variable VAR resolves to indent
+MLOGIC(VAREXIST):  %IF condition %sysfunc(varnum(&dsid, &var)) 
+      > 0 is TRUE
+MLOGIC(VAREXIST):  %LET (variable name is RESULT)
+MLOGIC(VAREXIST):  %PUT NOTE: Var &var exists in &ds
+SYMBOLGEN:  Macro variable VAR resolves to indent
+SYMBOLGEN:  Macro variable DS resolves to final
+NOTE: Var indent exists in final
+MLOGIC(VAREXIST):  %LET (variable name is RC)
+SYMBOLGEN:  Macro variable DSID resolves to 1
+MPRINT(VAREXIST):   run;
+MLOGIC(VAREXIST):  Ending execution.
+MPRINT(REPORT_RTF):  ;
+SYMBOLGEN:  Macro variable RESULT resolves to 1
+MLOGIC(REPORT_RTF):  %IF condition &result=1 is TRUE
+SYMBOLGEN:  Macro variable INDATA resolves to final
+The SAS System
+
+MPRINT(REPORT_RTF):   data _final;
+SYMBOLGEN:  Macro variable INDATA resolves to final
+MPRINT(REPORT_RTF):   set final;
+MPRINT(REPORT_RTF):   run;
+
+NOTE: There were 6 observations read from the data set 
+      WORK.FINAL.
+NOTE: The data set WORK._FINAL has 6 observations and 16 
+      variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(REPORT_RTF):   ** take care of the variable INDENT2 ** ;
+MLOGIC(VAREXIST):  Beginning execution.
+MLOGIC(VAREXIST):  This macro was compiled from the autocall 
+      file C:\yang\varexist.sas
+SYMBOLGEN:  Macro variable INDATA resolves to final
+MLOGIC(VAREXIST):  Parameter DS has value _final
+MLOGIC(VAREXIST):  Parameter VAR has value indent2
+MLOGIC(VAREXIST):  %GLOBAL  RESULT
+MLOGIC(VAREXIST):  %LOCAL  RC DSID 
+MLOGIC(VAREXIST):  %LET (variable name is DSID)
+SYMBOLGEN:  Macro variable DS resolves to _final
+SYMBOLGEN:  Macro variable DSID resolves to 1
+SYMBOLGEN:  Macro variable VAR resolves to indent2
+MLOGIC(VAREXIST):  %IF condition %sysfunc(varnum(&dsid, &var)) 
+      > 0 is TRUE
+MLOGIC(VAREXIST):  %LET (variable name is RESULT)
+MLOGIC(VAREXIST):  %PUT NOTE: Var &var exists in &ds
+SYMBOLGEN:  Macro variable VAR resolves to indent2
+The SAS System
+
+SYMBOLGEN:  Macro variable DS resolves to _final
+NOTE: Var indent2 exists in _final
+MLOGIC(VAREXIST):  %LET (variable name is RC)
+SYMBOLGEN:  Macro variable DSID resolves to 1
+MPRINT(VAREXIST):   run;
+MLOGIC(VAREXIST):  Ending execution.
+MPRINT(REPORT_RTF):  ;
+SYMBOLGEN:  Macro variable RESULT resolves to 1
+MLOGIC(REPORT_RTF):  %IF condition &result=1 is TRUE
+SYMBOLGEN:  Macro variable INDATA resolves to final
+MPRINT(REPORT_RTF):   data _final;
+SYMBOLGEN:  Macro variable INDATA resolves to final
+MPRINT(REPORT_RTF):   set _final;
+MPRINT(REPORT_RTF):   run;
+
+NOTE: There were 6 observations read from the data set 
+      WORK._FINAL.
+NOTE: The data set WORK._FINAL has 6 observations and 16 
+      variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+SYMBOLGEN:  Macro variable PGM resolves to t2
+MPRINT(REPORT_RTF):   ods document name=outd.t2(write);
+SYMBOLGEN:  Macro variable OUTDIR resolves to C:\yang
+SYMBOLGEN:  Macro variable PGM resolves to t2
+MPRINT(REPORT_RTF):   ods rtf file="C:\yang\t2.rtf" 
+style=custom ;
+NOTE: Writing RTF Body file: C:\yang\t2.rtf
+SYMBOLGEN:  Macro variable INDATA resolves to final
+The SAS System
+
+MPRINT(REPORT_RTF):   proc report data=_final headline headskip 
+missing split='^';
+SYMBOLGEN:  Macro variable VAL1 resolves to trt1
+SYMBOLGEN:  Macro variable VAL2 resolves to trt2
+SYMBOLGEN:  Macro variable VAL3 resolves to trt3
+MPRINT(REPORT_RTF):   columns tagn tag indent indent2 catlabel 
+trt1 ("~S={borderbottomcolor=black borderbottomwidth=2} Active" 
+trt2 trt3);
+MPRINT(REPORT_RTF):   ;
+MPRINT(REPORT_RTF):   define tagn/group noprint order;
+MPRINT(REPORT_RTF):   define tag/ group noprint;
+MPRINT(REPORT_RTF):   define indent/display noprint;
+MPRINT(REPORT_RTF):   define indent2/display noprint;
+SYMBOLGEN:  Macro variable TOT resolves to 3
+SYMBOLGEN:  Macro variable TRTWIDTH resolves to 1.5
+SYMBOLGEN:  Macro variable TOT resolves to 3
+SYMBOLGEN:  Macro variable TRTWIDTH resolves to 1.5
+SYMBOLGEN:  Macro variable TRT0 resolves to 
+MPRINT(REPORT_RTF):   define catlabel/display style(column)={ 
+cellwidth=4.3 in} style(header)={just=left cellwidth=4.3 in} "" 
+flow order=data;
+SYMBOLGEN:  Macro variable TOT resolves to 3
+MLOGIC(REPORT_RTF):  %DO loop beginning; index variable K; 
+      start value is 1; stop value is 3; by value is 1.  
+SYMBOLGEN:  && resolves to &.
+SYMBOLGEN:  Macro variable K resolves to 1
+SYMBOLGEN:  Macro variable VAL1 resolves to trt1
+SYMBOLGEN:  Macro variable TRTWIDTH resolves to 1.5
+SYMBOLGEN:  Macro variable TRTWIDTH resolves to 1.5
+SYMBOLGEN:  && resolves to &.
+SYMBOLGEN:  Macro variable K resolves to 1
+SYMBOLGEN:  Macro variable TRT1 resolves to Placebo^(N=4)
+The SAS System
+
+MPRINT(REPORT_RTF):   define trt1/style(column)={just=right 
+cellwidth=1.5 in} style(header)={just=right cellwidth=1.5 in} 
+"Placebo^(N=4)" flow;
+MLOGIC(REPORT_RTF):  %DO loop index variable K is now 2; loop 
+      will iterate again.
+SYMBOLGEN:  && resolves to &.
+SYMBOLGEN:  Macro variable K resolves to 2
+SYMBOLGEN:  Macro variable VAL2 resolves to trt2
+SYMBOLGEN:  Macro variable TRTWIDTH resolves to 1.5
+SYMBOLGEN:  Macro variable TRTWIDTH resolves to 1.5
+SYMBOLGEN:  && resolves to &.
+SYMBOLGEN:  Macro variable K resolves to 2
+SYMBOLGEN:  Macro variable TRT2 resolves to Low Dose^(N=5)
+MPRINT(REPORT_RTF):   define trt2/style(column)={just=right 
+cellwidth=1.5 in} style(header)={just=right cellwidth=1.5 in} 
+"Low Dose^(N=5)" flow;
+MLOGIC(REPORT_RTF):  %DO loop index variable K is now 3; loop 
+      will iterate again.
+SYMBOLGEN:  && resolves to &.
+SYMBOLGEN:  Macro variable K resolves to 3
+SYMBOLGEN:  Macro variable VAL3 resolves to trt3
+SYMBOLGEN:  Macro variable TRTWIDTH resolves to 1.5
+SYMBOLGEN:  Macro variable TRTWIDTH resolves to 1.5
+SYMBOLGEN:  && resolves to &.
+SYMBOLGEN:  Macro variable K resolves to 3
+SYMBOLGEN:  Macro variable TRT3 resolves to High Dose^(N=7)
+MPRINT(REPORT_RTF):   define trt3/style(column)={just=right 
+cellwidth=1.5 in} style(header)={just=right cellwidth=1.5 in} 
+"High Dose^(N=7)" flow;
+MLOGIC(REPORT_RTF):  %DO loop index variable K is now 4; loop 
+      will not iterate again.
+MPRINT(REPORT_RTF):   compute before tag;
+The SAS System
+
+MPRINT(REPORT_RTF):   line @1 " ";
+MPRINT(REPORT_RTF):   line @1 tag $200.;
+MPRINT(REPORT_RTF):   endcomp;
+MPRINT(REPORT_RTF):   compute catlabel;
+MPRINT(REPORT_RTF):   if indent='Y' then call define(_col_, 
+"style", "style={leftmargin=.15in}");
+MPRINT(REPORT_RTF):   if indent2='Y' then call define(_col_, 
+"style", "style={leftmargin=.30in}");
+MPRINT(REPORT_RTF):   endcomp;
+MPRINT(REPORT_RTF):   run;
+
+NOTE: Groups are not created because the usage of indent is 
+DISPLAY. To avoid this note, change all GROUP variables to 
+ORDER variables.
+ERROR: The width of catlabel is not between 1 and 64. Adjust 
+       the column width or line size.
+NOTE: This affects LISTING output.
+
+NOTE: The SAS System stopped processing this step because of 
+      errors.
+NOTE: There were 6 observations read from the data set 
+      WORK._FINAL.
+NOTE: PROCEDURE REPORT used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.03 seconds
+      
+MPRINT(REPORT_RTF):   ods rtf close;
+MPRINT(REPORT_RTF):   ods document close;
+MPRINT(REPORT_RTF):   run;
+MLOGIC(REPORT_RTF):  Ending execution.
+28         
+29         
+The SAS System
+
+30         
+
+
+ERROR: Errors printed on page 40.
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 
+      27513-2414
+NOTE: The SAS System used:
+      real time           0.61 seconds
+      cpu time            0.57 seconds
+      
